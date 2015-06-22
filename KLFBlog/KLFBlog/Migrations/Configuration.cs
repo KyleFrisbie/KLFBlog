@@ -37,7 +37,7 @@ namespace KLFBlog.Migrations
                 var manager = new UserManager<ApplicationUser>(store);
                 var user = new ApplicationUser { UserName = "kyle.l.frisbie@gmail.com" };
 
-                manager.Create(user, "ksbie.138816!kf");
+                manager.Create(user, "ksbie.Admin123");
             }
 
             context.BlogPosts.AddOrUpdate(b => b.Title,
