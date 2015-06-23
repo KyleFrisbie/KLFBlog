@@ -1357,6 +1357,7 @@ div.ppt {
 }
 
 .blog .sidebar{
+    position: absolute;
 	margin-top:30px;
 }
 

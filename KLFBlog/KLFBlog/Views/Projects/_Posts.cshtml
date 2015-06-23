@@ -1,15 +1,25 @@
-﻿@model IEnumerable<KLFBlog.Models.ProjectViewModel>
+﻿@model KLFBlog.Models.ProjectViewModel
 
-<div id="postList">
-    @foreach (var item in Model)
+<div class="entry">
+    <h2>@Html.ActionLink(Model.Title, "Posts", "Projects", new { id = Model.Id }, null)</h2>
+    <!-- Meta Deatils -->
+    @if (Model.Id % 2 == 0)
     {
-        <div>
-            <h1>@item.Title</h1>
-            <h3>@item.SubTitle</h3>
-            <h4>@item.Date</h4>
-            <h4>@item.Image</h4>
-            <p>@item.PostBody</p>
-            <hr />
+        <div class="meta br-green">
+            <i class="fa fa-calendar-o"></i> @Html.DisplayFor(modelItem => Model.Date) <span class="pull-right"></span>
         </div>
     }
+    else
+    {
+        <div class="meta br-red">
+            <i class="fa fa-calendar-o"></i> @Html.DisplayFor(modelItem => Model.Date) <span class="pull-right"></span>
+        </div>
+    }
+
+    <!-- Thumbnail -->
+    <div class="bthumb">
+        <img src=@Model.Image alt=" " class="img-responsive" />
+    </div>
+    <!--Paragraph -->
+    <p>@Html.Raw(Model.PostBody)</p>
 </div>

@@ -232,6 +232,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
     <None Include="Content\Site.less" />
+    <Content Include="Content\bootstrap-social.css" />
     <Content Include="Content\Template\assets\arrowleft.png" />
     <Content Include="Content\Template\assets\arrowright.png" />
     <Content Include="Content\Template\assets\arrow_large_left.png" />
@@ -375,6 +376,8 @@
     <Content Include="Content\Template\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\Template\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\Template\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\KLFBlog - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\KLFBlog - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\KLFBlog.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -459,6 +462,10 @@
     <Content Include="Views\BlogPosts\_Posts.cshtml" />
     <Content Include="Views\Projects\_Posts.cshtml" />
     <Content Include="Views\Projects\Posts.cshtml" />
+    <Content Include="Views\Shared\_SideBar.cshtml" />
+    <Content Include="Views\Shared\_RecentPostList.cshtml" />
+    <Content Include="Views\Shared\_SideBarProject.cshtml" />
+    <Content Include="Views\Shared\_RecentProjectList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

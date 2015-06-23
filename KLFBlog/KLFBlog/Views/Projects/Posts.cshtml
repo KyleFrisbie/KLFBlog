@@ -3,10 +3,20 @@
     ViewBag.Title = "Projects";
 }
 
-<form method="get" action="@Url.Action("Posts")"
-      data-klf-ajax="true" data-kyle-targe="#postList">
-    <input type="search" name="searchTerm" data-klf-autocomplete="@Url.Action("Autocomplete")" />
-    <input type="submit" value="Search Titles" />
-</form>
-
-@Html.Partial("_Posts", Model)
+<div class="blog br-white black">
+    <!-- Container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+                <!-- Posts -->
+                <div class="posts">
+                    @foreach (KLFBlog.Models.ProjectViewModel Project in Model)
+                    {
+                        @Html.Partial("_Posts", Project)
+                    }
+                </div>
+            </div>
+            @Html.Partial("_SideBarProject")
+        </div>
+    </div>
+</div>
