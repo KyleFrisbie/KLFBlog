@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿@*<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,13 +8,13 @@
     @Scripts.Render("~/bundles/modernizr")
 
     <script type="text/javascript">
-        var appInsights=window.appInsights||function(config){
-            function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t
+        var appInsights = window.appInsights || function (config) {
+            function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
         }({
-            instrumentationKey:"33f27acc-f85a-443d-b08a-309c5438ad6f"
+            instrumentationKey: "33f27acc-f85a-443d-b08a-309c5438ad6f"
         });
-        
-        window.appInsights=appInsights;
+
+        window.appInsights = appInsights;
         appInsights.trackPageView();
     </script>
 </head>
@@ -50,6 +50,127 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Title here -->
+    <title>@ViewBag.Title</title>
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your,Keywords">
+    <meta name="author" content="ResponsiveWebInc">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/Template/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font awesome CSS -->
+    <link href="~/Content/Template/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Dropdown Levels Menu Base CSS -->
+    <link href="~/Content/Template/css/ddlevelsmenu-base.css" rel="stylesheet">
+    <!-- Dropdown Levels Menu Topbar CSS -->
+    <link href="~/Content/Template/css/ddlevelsmenu-topbar.css" rel="stylesheet">
+    <!-- Slider Revolution CSS -->
+    <link href="~/Content/Template/css/rs-settings.css" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link href="~/Content/Template/css/animate.min.css" rel="stylesheet">
+    <!-- Pretty Photo CSS-->
+    <link href="~/Content/Template/css/prettyPhoto.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/Template/css/style.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+
+    <!-- Header  Starts -->
+
+    <header>
+        <!-- Container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <h1><a href="#"> <i class="fa fa-cloud"></i> Chandler</a></h1>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <!-- Navigation -->
+                    <div class="navi">
+                        <!-- Menu -->
+                        <div id="ddtopmenubar" class="mattblackmenu">
+                            <!-- UnorderedList -->
+                            <ul>
+                                <!-- List -->
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("BlogPosts", "Posts", "BlogPosts")</li>
+                                <li>@Html.ActionLink("Projects", "Posts", "Projects")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dropdown NavBar -->
+                <div class="navis"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Ends -->
+    <!-- Body Starts -->
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <!-- Body Ends -->
+    <!-- Footer Starts-->
+
+    <footer class="text-center">
+        <!-- Container -->
+        <div class="container">
+            <!-- Footer Content -->
+            <div class="footer-content">
+                <p>Copyright 2013 &copy; - <a href="#">Company name</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Ends -->
+    <!-- Scroll To Top -->
+    <span class="top"><a href="#"> <i class="fa fa-chevron-up"></i> </a></span>
+
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <!-- Jquery Js -->
+    <script src="~/Scripts/jquery.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="~/Scripts/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.themepunch.revolution.min.js"></script>
+    <!-- Arbitrary Anchor JS -->
+    <script type="text/javascript" src="~/Scripts/jquery.arbitrary-anchor.js"></script>
+    <!-- Pretty Photo JS -->
+    <script type="text/javascript" src="~/Scripts/jquery.prettyPhoto.js"></script>
+    <!-- jQuery way points -->
+    <script src="~/Scripts/waypoints.min.js"></script>
+    <!-- jQuery Sticky JS -->
+    <script src="~/Scripts/jquery.sticky.js"></script>
+    <!-- Dropdown Levels Menu JS -->
+    <script src="~/Scripts/ddlevelsmenu.js"></script>
+    <!-- Respond JS for IE8 -->
+    <script src="~/Scripts/respond.min.js"></script>
+    <!-- HTML5 Support for IE -->
+    <script src="~/Scripts/html5shiv.js"></script>
+    <!-- Custom JS -->
+    <script src="~/Scripts/custom.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

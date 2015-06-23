@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Pta.Build.WebEssentialsBundleTask.1.0.2\build\Pta.Build.WebEssentialsBundleTask.props" Condition="Exists('..\packages\Pta.Build.WebEssentialsBundleTask.1.0.2\build\Pta.Build.WebEssentialsBundleTask.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -20,7 +21,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <NuGetPackageImportStamp>0ea6b3ef</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>d4527581</NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/45d9cbcd-8f5a-40e6-bafc-d22637aa6d3f/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/KLFBlog</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -230,10 +231,132 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <None Include="Content\Site.less" />
+    <Content Include="Content\Template\assets\arrowleft.png" />
+    <Content Include="Content\Template\assets\arrowright.png" />
+    <Content Include="Content\Template\assets\arrow_large_left.png" />
+    <Content Include="Content\Template\assets\arrow_large_right.png" />
+    <Content Include="Content\Template\assets\arrow_left.png" />
+    <Content Include="Content\Template\assets\arrow_left2.png" />
+    <Content Include="Content\Template\assets\arrow_right.png" />
+    <Content Include="Content\Template\assets\arrow_right2.png" />
+    <Content Include="Content\Template\assets\black50.png" />
+    <Content Include="Content\Template\assets\boxed_bgtile.png" />
+    <Content Include="Content\Template\assets\bullet.png" />
+    <Content Include="Content\Template\assets\bullets.png" />
+    <Content Include="Content\Template\assets\bullets2.png" />
+    <Content Include="Content\Template\assets\bullet_boxed.png" />
+    <Content Include="Content\Template\assets\coloredbg.png" />
+    <Content Include="Content\Template\assets\grain.png" />
+    <Content Include="Content\Template\assets\large_left.png" />
+    <Content Include="Content\Template\assets\large_right.png" />
+    <Content Include="Content\Template\assets\loader.gif" />
+    <Content Include="Content\Template\assets\loader2.gif" />
+    <Content Include="Content\Template\assets\navigdots.png" />
+    <Content Include="Content\Template\assets\navigdots_bgtile.png" />
+    <Content Include="Content\Template\assets\shadow1.png" />
+    <Content Include="Content\Template\assets\shadow2.png" />
+    <Content Include="Content\Template\assets\shadow3.png" />
+    <Content Include="Content\Template\assets\small_left.png" />
+    <Content Include="Content\Template\assets\small_left_boxed.png" />
+    <Content Include="Content\Template\assets\small_right.png" />
+    <Content Include="Content\Template\assets\small_right_boxed.png" />
+    <Content Include="Content\Template\assets\timer.png" />
+    <Content Include="Content\Template\assets\timerdot.png" />
+    <Content Include="Content\Template\assets\transparent.jpg" />
+    <Content Include="Content\Template\assets\white50.png" />
+    <Content Include="Content\Template\css\animate.min.css" />
+    <Content Include="Content\Template\css\bootstrap.css" />
+    <Content Include="Content\Template\css\bootstrap.min.css" />
+    <Content Include="Content\Template\css\ddlevelsmenu-base.css" />
+    <Content Include="Content\Template\css\ddlevelsmenu-topbar.css" />
+    <Content Include="Content\Template\css\font-awesome.min.css" />
+    <Content Include="Content\Template\css\prettyPhoto.css" />
+    <Content Include="Content\Template\css\rs-settings.css" />
+    <Content Include="Content\Template\css\style.css" />
+    <Content Include="Content\Template\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Template\img\about-us\1.png" />
+    <Content Include="Content\Template\img\about-us\2.jpg" />
+    <Content Include="Content\Template\img\about-us\3.jpg" />
+    <Content Include="Content\Template\img\about-us\4.jpg" />
+    <Content Include="Content\Template\img\about-us\5.jpg" />
+    <Content Include="Content\Template\img\arrow-down.gif" />
+    <Content Include="Content\Template\img\arrow-right.gif" />
+    <Content Include="Content\Template\img\blog-single\1.jpg" />
+    <Content Include="Content\Template\img\blog-single\2.jpg" />
+    <Content Include="Content\Template\img\blog-single\3.jpg" />
+    <Content Include="Content\Template\img\blog\1.jpg" />
+    <Content Include="Content\Template\img\blog\2.jpg" />
+    <Content Include="Content\Template\img\features\1.jpg" />
+    <Content Include="Content\Template\img\features\2.jpg" />
+    <Content Include="Content\Template\img\features\3.png" />
+    <Content Include="Content\Template\img\features\4.png" />
+    <Content Include="Content\Template\img\portfolio\1.jpg" />
+    <Content Include="Content\Template\img\portfolio\2.jpg" />
+    <Content Include="Content\Template\img\portfolio\3.jpg" />
+    <Content Include="Content\Template\img\portfolio\4.jpg" />
+    <Content Include="Content\Template\img\portfolio\5.jpg" />
+    <Content Include="Content\Template\img\portfolio\6.jpg" />
+    <Content Include="Content\Template\img\portfolio\7.jpg" />
+    <Content Include="Content\Template\img\portfolio\8.jpg" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\default\sprite.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\Template\img\product\1.png" />
+    <Content Include="Content\Template\img\product\2.jpg" />
+    <Content Include="Content\Template\img\product\3.jpg" />
+    <Content Include="Content\Template\img\product\4.jpg" />
+    <Content Include="Content\Template\img\product\5.jpg" />
+    <Content Include="Content\Template\img\rs-slider\ipad-violet.png" />
+    <Content Include="Content\Template\img\rs-slider\iphone-blue.png" />
+    <Content Include="Content\Template\img\rs-slider\iphone-green.png" />
+    <Content Include="Content\Template\img\rs-slider\iphone-orange.png" />
+    <Content Include="Content\Template\img\rs-slider\iphone-red.png" />
+    <Content Include="Content\Template\img\rs-slider\transparent.png" />
+    <Content Include="Content\Template\img\testimonials\1.jpg" />
+    <Content Include="Content\Template\img\testimonials\2.jpg" />
+    <Content Include="Content\Template\img\testimonials\3.jpg" />
+    <Content Include="Content\Template\img\testimonials\4.jpg" />
+    <Content Include="Content\Template\img\testimonials\transparent.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Site_old.css" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\ai.0.15.0-build12287.js" />
     <Content Include="Scripts\ai.0.15.0-build12287.min.js" />
@@ -244,14 +367,32 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\Template\assets\arrows.psd" />
+    <Content Include="Content\Template\assets\bullets.psd" />
+    <Content Include="Content\Template\assets\small_arrows.psd" />
+    <Content Include="Content\Template\assets\Thumbs.db" />
+    <Content Include="Content\Template\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Template\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Template\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Template\fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\KLFBlog.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap_old.js" />
+    <Content Include="Scripts\bootstrap_old.min.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\ddlevelsmenu.js" />
+    <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.arbitrary-anchor.js" />
+    <Content Include="Scripts\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\jquery.sticky.js" />
+    <Content Include="Scripts\jquery.themepunch.plugins.min.js" />
+    <Content Include="Scripts\jquery.themepunch.revolution.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -259,10 +400,12 @@
     <Content Include="Scripts\klf.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\npm.js" />
-    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\respond_old.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\respond_old.min.js" />
+    <Content Include="Scripts\waypoints.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -363,7 +506,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets'))" />
+    <Error Condition="!Exists('..\packages\Pta.Build.WebEssentialsBundleTask.1.0.2\build\Pta.Build.WebEssentialsBundleTask.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Pta.Build.WebEssentialsBundleTask.1.0.2\build\Pta.Build.WebEssentialsBundleTask.props'))" />
+    <Error Condition="!Exists('..\packages\Pta.Build.WebEssentialsBundleTask.1.0.2\build\Pta.Build.WebEssentialsBundleTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Pta.Build.WebEssentialsBundleTask.1.0.2\build\Pta.Build.WebEssentialsBundleTask.targets'))" />
   </Target>
+  <Import Project="..\packages\Pta.Build.WebEssentialsBundleTask.1.0.2\build\Pta.Build.WebEssentialsBundleTask.targets" Condition="Exists('..\packages\Pta.Build.WebEssentialsBundleTask.1.0.2\build\Pta.Build.WebEssentialsBundleTask.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
