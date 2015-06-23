@@ -133,25 +133,26 @@
     <!-- Body Ends -->
     <!-- Footer Starts-->
 
-    <footer class="text-center">
+    @*<footer class="text-center">
         <!-- Container -->
         <div class="container">
             <!-- Footer Content -->
             <div class="footer-content">
-                <p>Copyright 2013 &copy; - <a href="#">Company name</a>
+                <p>Copyright @DateTime.Now - <a href="#">KyleLFrisbie.com</a>
             </div>
         </div>
-    </footer>
+    </footer>*@
 
     <!-- Footer Ends -->
     <!-- Scroll To Top -->
     <span class="top"><a href="#"> <i class="fa fa-chevron-up"></i> </a></span>
 
-    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
     <!-- Jquery Js -->
-    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="~/Scripts/bootstrap.min.js"></script>
+
+
     <!-- jQuery REVOLUTION Slider  -->
     <script type="text/javascript" src="~/Scripts/jquery.themepunch.plugins.min.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery.themepunch.revolution.min.js"></script>
@@ -159,6 +160,8 @@
     <script type="text/javascript" src="~/Scripts/jquery.arbitrary-anchor.js"></script>
     <!-- Pretty Photo JS -->
     <script type="text/javascript" src="~/Scripts/jquery.prettyPhoto.js"></script>
+
+
     <!-- jQuery way points -->
     <script src="~/Scripts/waypoints.min.js"></script>
     <!-- jQuery Sticky JS -->
@@ -171,6 +174,7 @@
     <script src="~/Scripts/html5shiv.js"></script>
     <!-- Custom JS -->
     <script src="~/Scripts/custom.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

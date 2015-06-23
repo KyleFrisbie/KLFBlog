@@ -13,6 +13,17 @@ namespace KLFBlog
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/klf.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/chandlerscript").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/bootstrap.min.js",
+                        "~/Scripts/waypoints.min.js",
+                        "~/Scripts/jquery.sticky.js",
+                        "~/Scripts/ddlevelsmenu.js",
+                        "~/Scripts/respond.min.js",
+                        "~/Scripts/html5shiv.js",
+                        "~/Scripts/custom.js"
+                        ));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
