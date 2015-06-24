@@ -35,6 +35,7 @@ namespace KLFBlog.Controllers
             var model =
                 db.BlogPosts
                     .Where(b => searchTerm == null || b.Title.Contains(searchTerm))
+                    .OrderByDescending(b => b.Date)
                     .Select(b => new BlogPostViewModel
                     {
                         Id = b.Id,
