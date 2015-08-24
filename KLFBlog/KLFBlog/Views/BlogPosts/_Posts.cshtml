@@ -1,24 +1,58 @@
 ﻿@model KLFBlog.Models.BlogPostViewModel
 
 <div class="entry">
-    <h2>@Html.ActionLink(Model.Title, "Posts", "BlogPosts", new { id = Model.Id }, null)</h2>
+    <h2>@Html.ActionLink(Model.Title, "_Posts", "BlogPosts", new { id = Model.Id }, null)</h2>
     <!-- Meta Deatils -->
     @if (Model.Id % 2 == 0)
     {
         <div class="meta br-green">
             <i class="fa fa-calendar-o"></i> @Html.DisplayFor(modelItem => Model.Date) <span class="pull-right"></span>
         </div>
-    } else
+    }
+    else
     {
         <div class="meta br-red">
             <i class="fa fa-calendar-o"></i> @Html.DisplayFor(modelItem => Model.Date) <span class="pull-right"></span>
         </div>
-    }       
+    }
 
     <!-- Thumbnail -->
     <div class="bthumb">
         <img src=@Model.Image alt=" " class="img-responsive" />
     </div>
+    <br />
+    <br />
     <!--Paragraph -->
-    <p>@Html.Raw(Model.PostBody)</p>
+    @if (ViewBag.display == "Group")
+    {
+        <button type="button" class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Click here to read @Html.DisplayFor(modelItem => Model.Title)</button>
+    }
+    <br />
+    <br />
+    @if (ViewBag.display == "Group")
+    {
+        <div collapse="isCollapsed">
+            <div class="well well-lg">
+                <p>@Html.Raw(Model.PostBody)</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>@Html.Raw(Model.PostBody)</p>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES * * */
+                var disqus_shortname = 'kylefrisbie';
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function () {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+        </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    }
 </div>

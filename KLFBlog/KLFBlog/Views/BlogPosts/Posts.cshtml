@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-8 col-sm-8">
                 <!-- Posts -->
-                <div class="posts">
+                <div class="posts" ng-controller="PostController">
                     @foreach (KLFBlog.Models.BlogPostViewModel BlogPost in Model)
                     {
                         @Html.Partial("_Posts", BlogPost)

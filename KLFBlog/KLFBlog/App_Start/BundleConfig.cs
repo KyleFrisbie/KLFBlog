@@ -13,6 +13,13 @@ namespace KLFBlog
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/klf.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                        "~/Scripts/angular.min.js",
+                        "~/Scripts/angular-ui/ui-bootstrap.min.js",
+                        "~/app/app.js",
+                        "~/app/PostController.js"
+                        ));
+
             bundles.Add(new ScriptBundle("~/bundles/chandlerscript").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.min.js",

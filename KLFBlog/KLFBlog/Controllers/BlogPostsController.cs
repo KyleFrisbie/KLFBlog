@@ -44,8 +44,10 @@ namespace KLFBlog.Controllers
                         Date = b.Date,
                         Tags = b.Tags,
                         Image = b.Image,
-                        PostBody = b.PostBody
+                        PostBody = b.PostBody,
                     });
+
+            ViewBag.display = "Group";
 
             if (Request.IsAjaxRequest())
             {
@@ -53,6 +55,29 @@ namespace KLFBlog.Controllers
             }
 
             return View(model);
+        }
+
+
+        [AllowAnonymous]
+        public ActionResult _Posts(int id)
+        {
+            var model =
+                db.BlogPosts
+                    .Where(b => b.Id.Equals(id))
+                    .Select(b => new BlogPostViewModel
+                    {
+                        Id = b.Id,
+                        Title = b.Title,
+                        SubTitle = b.SubTitle,
+                        Date = b.Date,
+                        Tags = b.Tags,
+                        Image = b.Image,
+                        PostBody = b.PostBody
+                    });
+
+            ViewBag.display = "Single";
+
+            return View("Posts", model);
         }
 
         // GET: BlogPosts
