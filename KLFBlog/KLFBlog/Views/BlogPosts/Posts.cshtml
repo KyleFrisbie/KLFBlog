@@ -10,10 +10,75 @@
             <div class="col-md-8 col-sm-8">
                 <!-- Posts -->
                 <div class="posts" ng-controller="PostController">
-                    @foreach (KLFBlog.Models.BlogPostViewModel BlogPost in Model)
-                    {
-                        @Html.Partial("_Posts", BlogPost)
-                    }
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        @{
+                            int i = 0;
+                        }
+                        @foreach (KLFBlog.Models.BlogPostViewModel BlogPost in Model)
+                        {
+
+                            <div class="entry">
+                                <h2>@Html.ActionLink(BlogPost.Title, "_Posts", "BlogPosts", new { id = BlogPost.Id }, null)</h2>
+                                <!-- Meta Deatils -->
+                                @if (BlogPost.Id % 2 == 0)
+                                {
+                                    <div class="meta br-green">
+                                        <i class="fa fa-calendar-o"></i> @Html.DisplayFor(modelItem => BlogPost.Date) <span class="pull-right"></span>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="meta br-red">
+                                        <i class="fa fa-calendar-o"></i> @Html.DisplayFor(modelItem => BlogPost.Date) <span class="pull-right"></span>
+                                    </div>
+                                }
+
+                                <!-- Thumbnail -->
+                                <div class="bthumb">
+                                    <img src=@BlogPost.Image alt=" " class="img-responsive" />
+                                </div>
+                                <br />
+                                <br />
+                                <!--Paragraph -->
+                                <div class="panel panel-default">
+                                    @if (i == 0)
+                                    {
+                                        <div class="panel-heading" role="tab" id="@Html.Raw("heading" + i)">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="@Html.Raw("#collapse" + i)" aria-expanded="true" aria-controls="@Html.Raw("collapse" + i)">
+                                                    <font color="Black">Read @BlogPost.Title</font>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="@Html.Raw("collapse" + i)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@Html.Raw("heading" + i)">
+                                            <div class="panel-body">
+                                                <div class="well well-lg">
+                                                    <p>@Html.Raw(BlogPost.PostBody)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="panel-heading" role="tab" id="@Html.Raw("heading" + i)">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="@Html.Raw("#collapse" + i)" aria-expanded="false" aria-controls="@Html.Raw("collapse" + i)">
+                                                    <font color="Black">Read @BlogPost.Title</font>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="@Html.Raw("collapse" + i)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@Html.Raw("heading" + i)">
+                                            <div class="panel-body">
+                                                <p>@Html.Raw(BlogPost.PostBody)</p>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+
+                            </div>
+                            i++;
+                        }
+                    </div>
                 </div>
             </div>
             @Html.Partial("_SideBar")
